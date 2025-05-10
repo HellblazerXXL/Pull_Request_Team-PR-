@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+  </header>
+  <body>
+    <!-- Weather App container -->
+    <div class="app-container">
+      <header class="app-header">
+        <h1>Weather Forecast</h1>
+        <p>Latest weather conditions</p>
+        <div id="clock"></div>
+
+    <!-- Input field and button  -->
+    <div class="search-container">
+        <input type="text" id="city" placeholder="Enter Country / City name..." />
+        <button onclick="getWeather()">Search</button>
+    </div>
+
+    <!-- Weather Display Container -->
+      <div class="weather-container">
+        <section class="current-weather">
+          <div class="icon"><img src="./weather-img/cloud2.png" /></div>
+          <div class="info">
+            <h2 id="cityName">Country / City</h2>
+            <p id="temperature">--°C</p>
+            <p id="description">Conditions: --</p>
+          </div>
+        </section>
+
+      <!-- Forecast for the week -->
+        <section class="forecast">
+          <div class="day">
+            <p class="weekday">Sunday</p>
+            <div class="icon"><img src="./weather-img/sun.png" /></div>
+            <p class="temp">--°C</p>
+          </div>
+          <div class="day">
+            <p class="weekday">Monday</p>
+            <div class="icon"><img src="./weather-img/sun.png" /></div>
+            <p class="temp">--°C</p>
+          </div>
+          <div class="day">
+            <p class="weekday">Tuesday</p>
+            <div class="icon"><img src="./weather-img/sun.png" /></div>
+            <p class="temp">--°C</p>
+          </div>
+          <div class="day">
+            <p class="weekday">Wednesday</p>
+            <div class="icon"><img src="./weather-img/sun.png" /></div>
+            <p class="temp">--°C</p>
+          </div>
+          <div class="day">
+            <p class="weekday">Thursday</p>
+            <div class="icon"><img src="./weather-img/sun.png" /></div>
+            <p class="temp">--°C</p>
+          </div>
+          <div class="day">
+            <p class="weekday">Friday</p>
+            <div class="icon"><img src="./weather-img/sun.png" /></div>
+            <p class="temp">--°C</p>
+          </div>
+          <div class="day">
+            <p class="weekday">Saturday</p>
+            <div class="icon"><img src="./weather-img/sun.png" /></div>
+            <p class="temp">--°C</p>
+          </div>
+        </section>
+
+      <!-- Forecast for the  Day -->
+        <section class="periods">
+          <h3>Today's Forecast</h3>
+          <div class="today">
+            <div>Morning: <span id="morning-temp">--°C</span></div>
+            <div>Afternoon: <span id="afternoon-temp">--°C</span></div>
+            <div>Evening: <span id="evening-temp">--°C</span></div>
+            <div>Night: <span id="night-temp">--°C</span></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
