@@ -85,10 +85,11 @@
       }
 
       #clock {
-        color: rgb(3, 105, 156);
+        color: white;
         font-size: 1rem;
         margin-top: 10px;
         margin-bottom: 10px;
+        font-weight: bold;
       }
 
       .search-container {
@@ -245,6 +246,7 @@
         justify-content: space-around;
         color: lightcyan;
         margin-top: 10px;
+        font-weight: bold;
       }
 
       /* Media Queries for Media Responsiveness */
@@ -332,7 +334,7 @@
         <!-- Weather App container -->
     <div class="app-container">
       <header class="app-header">
-        <h1>Weather Forecast</h1>
+        <h1>Pull Weather Forecast</h1>
         <p>Latest weather conditions</p>
         <div id="clock"></div>
 
@@ -359,37 +361,37 @@
           <div class="day">
             <p class="weekday">Sunday</p>
             <div class="icon"><img src="./weather-img/sun.png" /></div>
-            <p class="temp">--°C</p>
+            <p class="temp">22°C</p>
           </div>
           <div class="day">
             <p class="weekday">Monday</p>
             <div class="icon"><img src="./weather-img/sun.png" /></div>
-            <p class="temp">--°C</p>
+            <p class="temp">16°C</p>
           </div>
           <div class="day">
             <p class="weekday">Tuesday</p>
             <div class="icon"><img src="./weather-img/sun.png" /></div>
-            <p class="temp">--°C</p>
+            <p class="temp">40°C</p>
           </div>
           <div class="day">
             <p class="weekday">Wednesday</p>
             <div class="icon"><img src="./weather-img/sun.png" /></div>
-            <p class="temp">--°C</p>
+            <p class="temp">30°C</p>
           </div>
           <div class="day">
             <p class="weekday">Thursday</p>
             <div class="icon"><img src="./weather-img/sun.png" /></div>
-            <p class="temp">--°C</p>
+            <p class="temp">25°C</p>
           </div>
           <div class="day">
             <p class="weekday">Friday</p>
             <div class="icon"><img src="./weather-img/sun.png" /></div>
-            <p class="temp">--°C</p>
+            <p class="temp">29°C</p>
           </div>
           <div class="day">
             <p class="weekday">Saturday</p>
             <div class="icon"><img src="./weather-img/sun.png" /></div>
-            <p class="temp">--°C</p>
+            <p class="temp">27°C</p>
           </div>
         </section>
 
@@ -409,7 +411,7 @@
      
 
 
-// Your API key from OpenWeatherMap
+// API key from OpenWeatherMap
 const apiKey = "a2aa7a8607aa6fef10dfdf78325d434c";
 // Base URL for current weather
 const weatherUrl = "https://api.openweathermap.org/data/2.5/weather";
