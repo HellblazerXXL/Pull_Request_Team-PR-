@@ -405,6 +405,92 @@
         </section>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+     
+
+
+// Your API key from OpenWeatherMap
+const apiKey = "a2aa7a8607aa6fef10dfdf78325d434c";
+// Base URL for current weather
+const weatherUrl = "https://api.openweathermap.org/data/2.5/weather";
+
+// Images for different weather conditions
+const weatherImages = {
+    Clear: './weather-img/sun.png',
+    Clouds: './weather-img/cloud2.png',
+    Rain: './weather-img/rain.png'
+};
+
+// Show current time on the page
+function showClock() {
+    const clock = document.getElementById('clock');
+    const now = new Date();
+    clock.textContent = now.toLocaleTimeString();
+    
+    setTimeout(showClock, 1000);
+}
+
+// Get weather when user clicks Search
+function getWeather() {
+
+    const city = document.getElementById('city').value || 'Houston';
+    
+    const url = `${weatherUrl}?q=${city}&appid=${apiKey}&units=metric`;
+    
+    // Fetch weather data
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('City not found');
+            }
+            return response.json();
+        })
+        .then(data => {
+            
+            document.getElementById('cityName').textContent = data.name;
+            document.getElementById('temperature').textContent = `${Math.round(data.main.temp)}°C`;
+            document.getElementById('description').textContent = `Conditions: ${data.weather[0].description}`;
+            
+            // Update weather icon
+            const weatherIcon = document.querySelector('.current-weather .icon img');
+            const weatherType = data.weather[0].main;
+            weatherIcon.src = weatherImages[weatherType] || './weather-img/cloud2.png';
+            
+            // Update today's forecast 
+            document.getElementById('morning-temp').textContent = `${Math.round(data.main.temp)}°C`;
+            document.getElementById('afternoon-temp').textContent = `${Math.round(data.main.temp + 2)}°C`;
+            document.getElementById('evening-temp').textContent = `${Math.round(data.main.temp - 1)}°C`;
+            document.getElementById('night-temp').textContent = `${Math.round(data.main.temp - 3)}°C`;
+        })
+        .catch(error => {
+            alert('Could not find weather: ' + error.message);
+        });
+}
+
+// Toggle weekly forecast visibility
+function toggleForecast() {
+    const forecast = document.querySelector('.forecast');
+    const button = document.getElementById('toggleForecastBtn');
+    
+    // Show or hide forecast
+    if (forecast.style.display === 'grid') {
+        forecast.style.display = 'none';
+        button.textContent = 'Weekly Forecast';
+    } else {
+        forecast.style.display = 'grid';
+        button.textContent = 'Hide Forecast';
+    }
+}
+
+// Start the app
+document.addEventListener('DOMContentLoaded', () => {
+    showClock(); 
+    getWeather(); 
+});
+
+
+
+
+    </script>
   </body>
 </html>
